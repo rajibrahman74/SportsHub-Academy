@@ -63,7 +63,7 @@ const Navbar = () => {
         </div>
         <div className="my-auto me-auto">
           <Link to="/">
-            <img className="w-[200px]" src={logo} alt="" />
+            <img className="w-36 md:w-[200px]" src={logo} alt="" />
           </Link>
         </div>
         <div className="hidden lg:flex me-auto">
@@ -104,16 +104,16 @@ const Navbar = () => {
           </ul>
         </div>
         <div>
-          <div className="flex items-center justify-center">
-            <div className="flex items-center justify-center gap-6">
+          <div className="flex items-center justify-end">
+            <div className="flex items-center justify-end md:justify-center gap-6">
               <img
                 //   title={user.displayName}
-                className="w-12 h-12 rounded-full"
+                className="-mr-5 md:m-0 w-10 h-10 md:w-12 md:h-12 rounded-full"
                 //   src={user.photoURL}
                 src="https://media.licdn.com/dms/image/D5635AQEgt7x2SZjqbA/profile-framedphoto-shrink_200_200/0/1685807481790?e=1686762000&v=beta&t=Mv0BvaatB3P2lpUet6y3UHkgzBBFCpFRxGDC91u8ffI"
                 alt=""
               />
-              <button className="btn border-0 text-white hover:text-black hover:border hover:border-warning bg-warning px-6 py-2 font-semibold  flex items-center gap-1 rounded-none">
+              <button className="btn border-0 text-white hover:text-black hover:border hover:border-warning bg-warning px-4 py-1.5 md:px-6 md:py-2 font-semibold  flex items-center gap-1 rounded-none">
                 {/* <ArrowLeftOnRectangleIcon className="h-5 w-5" /> */}
                 Logout
               </button>
