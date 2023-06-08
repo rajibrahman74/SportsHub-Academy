@@ -3,7 +3,7 @@ import logo from "../../src/assets/logo.png";
 import { useContext } from "react";
 import { AuthContext } from "../providers/AuthProviders";
 const Navbar = () => {
-  const {user} = useContext(AuthContext)
+  const { user } = useContext(AuthContext);
   console.log(user);
   return (
     <header className="bg-[#eeeff1] sticky top-0 z-[100]">
@@ -55,14 +55,16 @@ const Navbar = () => {
               </NavLink>
             </li>
 
-            <li className="text-gray-900 font-medium">
-              <NavLink
-                activeClassName="active text-[#757575] font-semibold hover:text-warning"
-                to="/dashboard"
-              >
-                Dashboard
-              </NavLink>
-            </li>
+            {user && (
+              <li className="text-gray-900 font-medium">
+                <NavLink
+                  activeClassName="active text-[#757575] font-semibold hover:text-warning"
+                  to="/dashboard"
+                >
+                  Dashboard
+                </NavLink>
+              </li>
+            )}
           </ul>
         </div>
         <div className="my-auto me-auto">
@@ -97,34 +99,41 @@ const Navbar = () => {
               </NavLink>
             </li>
 
-            <li className="text-gray-900 font-medium">
-              <NavLink
-                activeClassName="active text-[#757575] font-semibold hover:text-warning"
-                to="/dashboard"
-              >
-                Dashboard
-              </NavLink>
-            </li>
+            {user && (
+              <li className="text-gray-900 font-medium">
+                <NavLink
+                  activeClassName="active text-[#757575] font-semibold hover:text-warning"
+                  to="/dashboard"
+                >
+                  Dashboard
+                </NavLink>
+              </li>
+            )}
           </ul>
         </div>
         <div>
           <div className="flex items-center justify-end">
             <div className="flex items-center justify-end md:justify-center gap-6">
-              <img
-                //   title={user.displayName}
-                className="-mr-5 md:m-0 w-10 h-10 md:w-12 md:h-12 rounded-full"
-                //   src={user.photoURL}
-                src="https://media.licdn.com/dms/image/D5635AQEgt7x2SZjqbA/profile-framedphoto-shrink_200_200/0/1685807481790?e=1686762000&v=beta&t=Mv0BvaatB3P2lpUet6y3UHkgzBBFCpFRxGDC91u8ffI"
-                alt=""
-              />
-              <button className="btn border-0 text-white hover:text-black hover:border hover:border-warning bg-warning px-4 py-1.5 md:px-6 md:py-2 font-semibold  flex items-center gap-1 rounded-none">
-                Logout
-              </button>
-              {/* <Link to="/login">
-                <button className="btn border-0 text-white hover:text-black hover:border hover:border-warning bg-warning px-4 py-1.5 md:px-6 md:py-2 font-semibold  flex items-center gap-1 rounded-none">
-                  Logout
-                </button>
-              </Link> */}
+              {user ? (
+                <span className="flex items-center justify-center gap-3">
+                  <img
+                    title={user.displayName}
+                    className="-mr-5 md:m-0 w-10 h-10 md:w-12 md:h-12 rounded-full"
+                    //   src={user.photoURL}
+                    src={user.photoURL}
+                    alt="User profile image"
+                  />
+                  <button className="btn border-0 text-white hover:text-black hover:border hover:border-warning bg-warning px-4 py-1.5 md:px-6 md:py-2 font-semibold  flex items-center gap-1 rounded-none">
+                    Logout
+                  </button>
+                </span>
+              ) : (
+                <Link to="/login">
+                  <button className="btn border-0 text-white hover:text-black hover:border hover:border-warning bg-warning px-4 py-1.5 md:px-6 md:py-2 font-semibold  flex items-center gap-1 rounded-none">
+                    Login
+                  </button>
+                </Link>
+              )}
             </div>
           </div>
         </div>
