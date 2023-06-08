@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import google from "../../../src/assets/google.png";
+import { Helmet } from "react-helmet";
 
 const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -25,6 +26,9 @@ const SignUp = () => {
 
   return (
     <div className="my-12 rounded-none shadow-xl p-6 max-w-sm mx-auto">
+      <Helmet>
+        <title>Sign up - SportsHub Academy</title>
+      </Helmet>
       <form onSubmit={handleSubmit(onSubmit)}>
         <h1 className="font-semibold text-2xl my-6 text-center">Sign up</h1>
         <div className="mb-2">
