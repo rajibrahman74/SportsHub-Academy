@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import google from "../../../src/assets/google.png";
 import { Helmet } from "react-helmet";
+import { AuthContext } from "../../providers/AuthProviders";
+import Swal from "sweetalert2";
 
 const SignUp = () => {
+  const { createUser, googleSigIn } = useContext(AuthContext);
   const [showPassword, setShowPassword] = useState(false);
   const {
     register,
@@ -12,11 +15,57 @@ const SignUp = () => {
     reset,
     formState: { errors },
   } = useForm();
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const from = location.state?.from?.pathname || "/";
 
   const onSubmit = (data) => {
     // signup functionality here
     console.log(data);
-    reset();
+    createUser(data.email, data.password, data.name, data.photoURL)
+      .then((result) => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "User Sign Up successfully",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+        reset();
+        navigate(from, { replace: true });
+      })
+      .catch((error) => {
+        console.error(error.message);
+        Swal.fire({
+          position: "top-end",
+          icon: "error",
+          title: error.message,
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      });
+  };
+
+  const handleGoogleLogin = () => {
+    googleSigIn()
+      .then((result) => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+        navigate(from, { replace: true });
+      })
+      .catch((error) => {
+        console.error(error.message);
+        Swal.fire({
+          position: "top-end",
+          icon: "error",
+          title: error.message,
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      });
   };
 
   // toggle show password
@@ -43,13 +92,13 @@ const SignUp = () => {
           />
         </div>
         <div className="mb-2">
-          <label htmlFor="photoUrl" className="block mb-2 font-medium">
+          <label htmlFor="photoURL" className="block mb-2 font-medium">
             Photo URL
           </label>
           <input
             type="text"
-            id="photoUrl"
-            {...register("photoUrl")}
+            id="photoURL"
+            {...register("photoURL")}
             className="w-full px-3 py-2 border border-gray-200 rounded-none focus:outline-none focus:ring-1 focus:ring-warning"
           />
         </div>
@@ -146,7 +195,10 @@ const SignUp = () => {
           </div>
         </div>
       </form>
-      <button className="my-6 bg-primary text-black w-[200px] cursor-pointe font-semibold flex justify-center mx-auto items-center cursor-pointer hover:border hover:border-warning border-transparent">
+      <button
+        onClick={handleGoogleLogin}
+        className="my-6 bg-primary text-black w-[200px] cursor-pointe font-semibold flex justify-center mx-auto items-center cursor-pointer hover:border hover:border-warning border-transparent"
+      >
         <img className="max-w-[28px] mr-2 py-2" src={google} alt="" />
         <span className="pr-1">Sign up with Google</span>
       </button>

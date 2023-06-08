@@ -21,40 +21,88 @@ const Home = () => {
       {/* <Swiper
         effect={"flip"}
         grabCursor={true}
-        pagination={true}
-        navigation={true}
+        pagination={{ clickable: true }}
+        navigation
+        loop={true}
+        autoplay={{ delay: 5000 }}
         modules={[EffectFlip, Pagination, Navigation]}
-        className="mySwiper w-[98.7vw] h-[88vh]"
+        className="mySwiper xl:w-[98.7vw] xl:h-[88vh] h-[70vh]"
       >
         <SwiperSlide>
+          <div>
           <img
-            className="w-full h-full"
+            className="w-full h-auto"
             src="https://swiperjs.com/demos/images/nature-1.jpg"
           />
+          <div className="banner-content absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4">
+                Title 1
+              </h2>
+              <p className="text-white mb-8">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              </p>
+              <button className="bg-white text-black py-2 px-4 rounded">
+                Click Me
+              </button>
+            </div>
+          </div>
         </SwiperSlide>
         <SwiperSlide>
+          <div>
           <img
-            className="w-full h-full"
+            className="w-full h-[70vh]"
+            src="https://swiperjs.com/demos/images/nature-1.jpg"
+          />
+          <div className="banner-content absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4">
+                Title 2
+              </h2>
+              <p className="text-white mb-8">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              </p>
+              <button className="bg-white text-black py-2 px-4 rounded">
+                Click Me
+              </button>
+            </div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div>
+          <img
+            className="w-full h-auto"
+            src="https://swiperjs.com/demos/images/nature-1.jpg"
+          />
+          <div className="banner-content absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4">
+                Title 3
+              </h2>
+              <p className="text-white mb-8">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              </p>
+              <button className="bg-white text-black py-2 px-4 rounded">
+                Click Me
+              </button>
+            </div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div>
+          <img
+            className="w-full h-auto"
             src="https://swiperjs.com/demos/images/nature-2.jpg"
           />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            className="w-full h-full"
-            src="https://swiperjs.com/demos/images/nature-3.jpg"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            className="w-full h-full"
-            src="https://swiperjs.com/demos/images/nature-4.jpg"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            className="w-full h-full"
-            src="https://swiperjs.com/demos/images/nature-5.jpg"
-          />
+          <div className="banner-content absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4">
+                Title 4
+              </h2>
+              <p className="text-white mb-8">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              </p>
+              <button className="bg-white text-black py-2 px-4 rounded">
+                Click Me
+              </button>
+            </div>
+          </div>
         </SwiperSlide>
       </Swiper> */}
     </>

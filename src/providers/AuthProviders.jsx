@@ -20,14 +20,14 @@ const AuthProviders = ({ children }) => {
   const googleProvider = new GoogleAuthProvider();
 
   // create user for singup
-  const createUser = (email, password, displayName, photoUrl) => {
+  const createUser = (email, password, displayName, photoURL) => {
     setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password).then(
       (userCredential) => {
         // Set display name and photo URL
         return updateProfile(userCredential.user, {
           displayName,
-          photoUrl,
+          photoURL,
         }).then(() => {
           return userCredential;
         });
