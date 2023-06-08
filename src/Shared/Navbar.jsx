@@ -3,8 +3,17 @@ import logo from "../../src/assets/logo.png";
 import { useContext } from "react";
 import { AuthContext } from "../providers/AuthProviders";
 const Navbar = () => {
-  const { user } = useContext(AuthContext);
-  console.log(user);
+  const { user, logOut } = useContext(AuthContext);
+  // console.log(user);
+
+  // logout imnpliment here
+  const handleLogOut = () => {
+    logOut()
+      .then((result) => {})
+      .catch((error) => {
+        console.error(error.message);
+      });
+  };
   return (
     <header className="bg-[#eeeff1] sticky top-0 z-[100]">
       <nav className="navbar max-w-7xl mx-auto flex justify-between items-center px-4 py-5">
@@ -123,7 +132,10 @@ const Navbar = () => {
                     src={user.photoURL}
                     alt="User profile image"
                   />
-                  <button className="btn border-0 text-white hover:text-black hover:border hover:border-warning bg-warning px-4 py-1.5 md:px-6 md:py-2 font-semibold  flex items-center gap-1 rounded-none">
+                  <button
+                    onClick={handleLogOut}
+                    className="btn border-0 text-white hover:text-black hover:border hover:border-warning bg-warning px-4 py-1.5 md:px-6 md:py-2 font-semibold  flex items-center gap-1 rounded-none"
+                  >
                     Logout
                   </button>
                 </span>
