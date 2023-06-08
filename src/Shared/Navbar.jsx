@@ -1,6 +1,10 @@
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../src/assets/logo.png";
+import { useContext } from "react";
+import { AuthContext } from "../providers/AuthProviders";
 const Navbar = () => {
+  const {user} = useContext(AuthContext)
+  console.log(user);
   return (
     <header className="bg-[#eeeff1] sticky top-0 z-[100]">
       <nav className="navbar max-w-7xl mx-auto flex justify-between items-center px-4 py-5">

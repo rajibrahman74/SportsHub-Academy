@@ -1,22 +1,72 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import google from "../../../src/assets/google.png";
 import { Helmet } from "react-helmet";
+import { AuthContext } from "../../providers/AuthProviders";
+import Swal from "sweetalert2";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const { singIn, googleSigIn } = useContext(AuthContext);
   const {
     register,
     handleSubmit,
     reset,
     formState: { errors },
   } = useForm();
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const from = location.state?.from?.pathname || "/";
 
   const onSubmit = (data) => {
     // signup functionality here
     console.log(data);
-    reset();
+
+    singIn(data.email, data.password)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        Swal.fire({
+          position: "top-start",
+          icon: "success",
+          title: "Login successfully",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+        reset();
+        navigate(from, { replace: true });
+      })
+      .catch((error) => {
+        console.error(error.message);
+        Swal.fire({
+          position: "top-start",
+          icon: "error",
+          title: error.message,
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      });
+  };
+
+  const handleGoogleLogin = () => {
+    googleSigIn()
+      .then((result) => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+        navigate(from, { replace: true });
+      })
+      .catch((error) => {
+        console.error(error.message);
+        Swal.fire({
+          position: "top-end",
+          icon: "error",
+          title: error.message,
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      });
   };
 
   // toggle show password
@@ -92,7 +142,10 @@ const Login = () => {
           </div>
         </div>
       </form>
-      <button className="my-6 bg-primary text-black w-[200px] cursor-pointe font-semibold flex justify-center mx-auto items-center cursor-pointer hover:border hover:border-warning border-transparent">
+      <button
+        onClick={handleGoogleLogin}
+        className="my-6 bg-primary text-black w-[200px] cursor-pointe font-semibold flex justify-center mx-auto items-center cursor-pointer hover:border hover:border-warning border-transparent"
+      >
         <img className="max-w-[28px] mr-2 py-2" src={google} alt="" />
         <span className="pr-1">Sign in with Google</span>
       </button>
