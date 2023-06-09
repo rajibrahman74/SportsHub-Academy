@@ -127,14 +127,14 @@ const Navbar = () => {
                 <span className="flex items-center justify-center gap-3">
                   <img
                     title={user.displayName}
-                    className="-mr-5 md:m-0 w-10 h-10 md:w-12 md:h-12 rounded-full"
+                    className="-mr-1 md:m-0 w-10 h-10 md:w-12 md:h-12 rounded-full"
                     //   src={user.photoURL}
                     src={user.photoURL}
                     alt="User profile image"
                   />
                   <button
                     onClick={handleLogOut}
-                    className="btn border-0 text-white hover:text-black hover:border hover:border-warning bg-warning px-4 py-1.5 md:px-6 md:py-2 font-semibold  flex items-center gap-1 rounded-none"
+                    className="btn border-0 text-white hover:text-black hover:border hover:border-warning bg-warning px-4 py-1.5 md:px-6 md:py-2 font-semibold  flex items-center gap-1 rounded-none hover:btn-outline"
                   >
                     Logout
                   </button>

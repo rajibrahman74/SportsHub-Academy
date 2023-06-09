@@ -1,10 +1,11 @@
 import React from "react";
 import { useLoaderData } from "react-router-dom";
 import { motion } from "framer-motion";
+import useData from "../../../hooks/useData";
 
 const PopularInstructors = () => {
-  const instructors = useLoaderData();
-
+  // const instructors = useLoaderData();
+  const [data] = useData();
   // Animation variants for the image
   const imageVariants = {
     initial: { opacity: 0, scale: 0.8 },
@@ -17,7 +18,7 @@ const PopularInstructors = () => {
         Our Popular Instructors
       </h2>
       <div className="grid gap-10 md:grid-cols-3">
-        {instructors.map((instructor) => (
+        {data.map((instructor) => (
           <div key={instructor.id} className="card h-90">
             <motion.img
               src={instructor.instructor_image}

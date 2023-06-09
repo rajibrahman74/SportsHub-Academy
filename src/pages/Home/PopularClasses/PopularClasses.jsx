@@ -1,8 +1,10 @@
 import React from "react";
 import { useLoaderData } from "react-router-dom";
+import useData from "../../../hooks/useData";
 
 const PopularClasses = () => {
-  const classes = useLoaderData();
+  // const classes = useLoaderData();
+  const [data] = useData();
 
   return (
     <div className="max-w-7xl w-full mx-auto px-4 mt-32">
@@ -10,7 +12,7 @@ const PopularClasses = () => {
         Our Popular Classes
       </h2>
       <div className="grid gap-4 md:grid-cols-3">
-        {classes.map((popularClass) => (
+        {data.map((popularClass) => (
           <div key={popularClass.id} className="w-full md:w-auto p-4">
             <div className="bg-white rounded-lg shadow-lg">
               <img
