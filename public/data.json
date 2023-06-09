@@ -1,68 +1,74 @@
 [
-    {
-      "instructor_name": "John Doe",
-      "instructor_email": "johndoe@example.com",
-      "instructor_image": "https://www.cricket.com.au/~/-/media/News/2022/04/14AndrewMcDonald.ashx?w=1600&h=1200",
-      "class_name": "Basic cricket knowledge",
-      "class_image": "https://completecricket.com.au/wp-content/uploads/2017/09/Complete-Cricket-private-coaching.jpg",
-      "available_seats": 10,
-      "price": 99.99,
-      "class_status": "pending",
-      "enrolled_student": 0
-    },
-    {
-      "instructor_name": "Jane Smith",
-      "instructor_email": "janesmith@example.com",
-      "instructor_image": "https://fcmsm.eu/wp-content/uploads/2020/11/%D0%A4%D1%83%D1%82%D0%B1%D0%BE%D0%BB_%D0%9B%D0%B5%D1%82%D0%BE-2-2.jpg",
-      "class_name": "Basic Football knowledge",
-      "class_image": "https://i.ibb.co/25hn3GQ/depositphotos-416868016-stock-photo-mature-coach-teaching-strategy-high.jpg",
-      "available_seats": 15,
-      "price": 149.99,
-      "class_status": "pending",
-      "enrolled_student": 0
-    },
-    {
-      "instructor_name": "Michael Johnson",
-      "instructor_email": "michaeljohnson@example.com",
-      "instructor_image": "https://media.istockphoto.com/id/852401732/photo/happy-personal-trainer-working-at-the-gym.jpg?s=612x612&w=0&k=20&c=m4Wk3lVvjEFIHbiAfUuFNBwEhvvSgf4Vv5ib9JUsrJk=",
-      "class_name": "Track and field",
-      "class_image": "https://www.ziprecruiter.com/svc/fotomat/public-ziprecruiter/cms/947453148AssistantTrackandFieldCoach.jpg",
-      "available_seats": 5,
-      "price": 199.99,
-      "class_status": "pending",
-      "enrolled_student": 0
-    },
-    {
-      "instructor_name": "Emily Brown",
-      "instructor_email": "emilybrown@example.com",
-      "instructor_image": "https://www.mwbcoaching.co.uk/wp-content/uploads/2020/03/DSC2254.jpg",
-      "class_name": "Badminton Techniques",
-      "class_image": "https://www.bgbadminton.com/wp-content/uploads/2017/08/IMG_5356.jpg",
-      "available_seats": 12,
-      "price": 79.99,
-      "class_status": "pending",
-      "enrolled_student": 0
-    },
-    {
-      "instructor_name": "Daniel Wilson",
-      "instructor_email": "danielwilson@example.com",
-      "instructor_image": "https://www.courant.com/wp-content/uploads/migration/2023/01/17/ZUDW7YFCM5AITDKNWH3MJWK264.jpg?w=620",
-      "class_name": "Basic hockey knowledge",
-      "class_image": "https://www.timturkhockey.com/wp-content/uploads/2019/02/Article-Choosing-off-Ice-hockey-trainer.jpg",
-      "available_seats": 8,
-      "price": 129.99,
-      "class_status": "pending",
-      "enrolled_student": 0
-    },
-    {
-      "instructor_name": "Sarah Thompson",
-      "instructor_email": "sarahthompson@example.com",
-      "instructor_image": "https://images.news18.com/ibnlive/uploads/2022/07/manpreet-singh-jsw-16580660044x3.jpg",
-      "class_name": "Advanced knowledge of Kabaddi",
-      "class_image": "https://hongkongfp.com/wp-content/uploads/2022/08/000_32GL3KM.jpg",
-      "available_seats": 20,
-      "price": 89.99,
-      "class_status": "pending",
-      "enrolled_student": 0
-    }
-  ]
+  {
+    "id": 1,
+    "instructor_name": "John Doe",
+    "instructor_email": "johndoe@example.com",
+    "instructor_image": "https://www.cricket.com.au/~/-/media/News/2022/04/14AndrewMcDonald.ashx?w=1600&h=1200",
+    "class_name": "Basic cricket knowledge",
+    "class_image": "https://completecricket.com.au/wp-content/uploads/2017/09/Complete-Cricket-private-coaching.jpg",
+    "available_seats": 10,
+    "price": 99.99,
+    "class_status": "pending",
+    "enrolled_student": 0
+  },
+  {
+    "id": 2,
+    "instructor_name": "Jane Smith",
+    "instructor_email": "janesmith@example.com",
+    "instructor_image": "https://fcmsm.eu/wp-content/uploads/2020/11/%D0%A4%D1%83%D1%82%D0%B1%D0%BE%D0%BB_%D0%9B%D0%B5%D1%82%D0%BE-2-2.jpg",
+    "class_name": "Basic Football knowledge",
+    "class_image": "https://i.ibb.co/25hn3GQ/depositphotos-416868016-stock-photo-mature-coach-teaching-strategy-high.jpg",
+    "available_seats": 15,
+    "price": 149.99,
+    "class_status": "pending",
+    "enrolled_student": 0
+  },
+  {
+    "id": 3,
+    "instructor_name": "Michael Johnson",
+    "instructor_email": "michaeljohnson@example.com",
+    "instructor_image": "https://media.istockphoto.com/id/852401732/photo/happy-personal-trainer-working-at-the-gym.jpg?s=612x612&w=0&k=20&c=m4Wk3lVvjEFIHbiAfUuFNBwEhvvSgf4Vv5ib9JUsrJk=",
+    "class_name": "Track and field",
+    "class_image": "https://www.ziprecruiter.com/svc/fotomat/public-ziprecruiter/cms/947453148AssistantTrackandFieldCoach.jpg",
+    "available_seats": 5,
+    "price": 199.99,
+    "class_status": "pending",
+    "enrolled_student": 0
+  },
+  {
+    "id": 4,
+    "instructor_name": "Emily Brown",
+    "instructor_email": "emilybrown@example.com",
+    "instructor_image": "https://www.mwbcoaching.co.uk/wp-content/uploads/2020/03/DSC2254.jpg",
+    "class_name": "Badminton Techniques",
+    "class_image": "https://www.bgbadminton.com/wp-content/uploads/2017/08/IMG_5356.jpg",
+    "available_seats": 12,
+    "price": 79.99,
+    "class_status": "pending",
+    "enrolled_student": 0
+  },
+  {
+    "id": 5,
+    "instructor_name": "Daniel Wilson",
+    "instructor_email": "danielwilson@example.com",
+    "instructor_image": "https://www.courant.com/wp-content/uploads/migration/2023/01/17/ZUDW7YFCM5AITDKNWH3MJWK264.jpg?w=620",
+    "class_name": "Basic hockey knowledge",
+    "class_image": "https://www.timturkhockey.com/wp-content/uploads/2019/02/Article-Choosing-off-Ice-hockey-trainer.jpg",
+    "available_seats": 8,
+    "price": 129.99,
+    "class_status": "pending",
+    "enrolled_student": 0
+  },
+  {
+    "id": 6,
+    "instructor_name": "Sarah Thompson",
+    "instructor_email": "sarahthompson@example.com",
+    "instructor_image": "https://images.news18.com/ibnlive/uploads/2022/07/manpreet-singh-jsw-16580660044x3.jpg",
+    "class_name": "Advanced knowledge of Kabaddi",
+    "class_image": "https://hongkongfp.com/wp-content/uploads/2022/08/000_32GL3KM.jpg",
+    "available_seats": 20,
+    "price": 89.99,
+    "class_status": "pending",
+    "enrolled_student": 0
+  }
+]
