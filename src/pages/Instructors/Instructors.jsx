@@ -5,7 +5,7 @@ import useData from "../../hooks/useData";
 
 const Instructors = () => {
   // const instructors = useLoaderData();
-  const [data] = useData()
+  const [data] = useData();
   console.log(data);
 
   return (
@@ -38,7 +38,8 @@ const Instructors = () => {
                     {instructor.instructor_name}
                   </h3>
                   <p className="text-sm text-slate-400">
-                    {instructor.instructor_email}
+                    <span className="font-bold"> Instructor email:</span>
+                    <span> {instructor.instructor_email}</span>
                   </p>
                 </div>
               </header>
