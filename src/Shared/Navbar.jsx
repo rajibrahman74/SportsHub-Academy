@@ -141,7 +141,7 @@ const Navbar = () => {
                 </span>
               ) : (
                 <Link to="/login">
-                  <button className="btn border-0 text-white hover:text-black hover:border hover:border-warning bg-warning px-4 py-1.5 md:px-6 md:py-2 font-semibold  flex items-center gap-1 rounded-none">
+                  <button className="btn border-0 text-white hover:text-black hover:border hover:border-warning bg-warning px-4 py-1.5 md:px-6 md:py-2 font-semibold  flex items-center gap-1 rounded-none hover:btn-outline">
                     Login
                   </button>
                 </Link>
