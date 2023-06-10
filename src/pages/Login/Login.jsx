@@ -53,9 +53,34 @@ const Login = () => {
   const handleGoogleLogin = () => {
     googleSigIn()
       .then((result) => {
-        const loggedUser = result.user;
-        console.log(loggedUser);
-        navigate(from, { replace: true });
+        const user = result.user;
+        const saveUser = {
+          name: user.displayName,
+          email: user.email,
+          role: "student",
+        };
+
+        fetch("http://localhost:5000/users", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(saveUser),
+        })
+          .then((res) => res.json())
+          .then(() => {
+            navigate(from, { replace: true });
+          })
+          .catch((error) => {
+            console.error(error.message);
+            Swal.fire({
+              position: "top-end",
+              icon: "error",
+              title: error.message,
+              showConfirmButton: false,
+              timer: 1500,
+            });
+          });
       })
       .catch((error) => {
         console.error(error.message);

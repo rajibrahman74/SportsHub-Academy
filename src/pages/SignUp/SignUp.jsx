@@ -21,40 +21,77 @@ const SignUp = () => {
   const from = location.state?.from?.pathname || "/";
 
   const onSubmit = (data) => {
-    // signup functionality here
-    console.log(data);
     createUser(data.email, data.password, data.name, data.photoURL)
       .then((result) => {
         const loggedUser = result.user;
         console.log(loggedUser);
-        Swal.fire({
-          position: "top-end",
-          icon: "success",
-          title: "User Sign Up successfully",
-          showConfirmButton: false,
-          timer: 1500,
-        });
-        reset();
-        navigate(from, { replace: true });
+
+        const saveUsers = {
+          name: data.name,
+          email: data.email,
+          role: "student",
+        };
+        fetch("http://localhost:5000/users", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(saveUsers),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.insertedId) {
+              reset();
+              Swal.fire({
+                position: "center",
+                icon: "success",
+                title: "User Created Successfully",
+                showConfirmButton: false,
+                timer: 1500,
+              });
+              navigate(from, { replace: true });
+            }
+          })
+          .catch((error) => {
+            console.log(error);
+          });
       })
       .catch((error) => {
-        console.error(error.message);
-        Swal.fire({
-          position: "top-end",
-          icon: "error",
-          title: error.message,
-          showConfirmButton: false,
-          timer: 1500,
-        });
+        console.log(error);
       });
   };
 
   const handleGoogleLogin = () => {
     googleSigIn()
       .then((result) => {
-        const loggedUser = result.user;
-        console.log(loggedUser);
-        navigate(from, { replace: true });
+        const user = result.user;
+        const saveUser = {
+          name: user.displayName,
+          email: user.email,
+          role: "student",
+        };
+
+        fetch("http://localhost:5000/users", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(saveUser),
+        })
+          .then((res) => res.json())
+          .then(() => {
+            navigate(from, { replace: true });
+          })
+          .catch((error) => {
+            console.error(error.message);
+            Swal.fire({
+              position: "top-end",
+              icon: "error",
+              title: error.message,
+              showConfirmButton: false,
+              timer: 1500,
+            });
+          });
       })
       .catch((error) => {
         console.error(error.message);

@@ -53,13 +53,13 @@ const ManageClasses = () => {
                 </td>
                 <td>Pending</td>
                 <td className="flex flex-col gap-2 text-white">
-                  <button className="btn btn-ghost btn-xs bg-green-600">
+                  <button className="btn btn-ghost btn-xs bg-green-600 hover:text-black">
                     Approve
                   </button>
-                  <button className="btn btn-ghost btn-xs bg-red-600">
+                  <button className="btn btn-ghost btn-xs bg-red-600 hover:text-black">
                     Deny
                   </button>
-                  <button className="btn btn-ghost btn-xs bg-yellow-600">
+                  <button className="btn btn-ghost btn-xs bg-yellow-600 hover:text-black">
                     feedback
                   </button>
                 </td>
