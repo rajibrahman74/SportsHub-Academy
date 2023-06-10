@@ -34,6 +34,25 @@ const ManageUsers = () => {
         }
       });
   };
+  const handleMakeInstructor = (user) => {
+    fetch(`http://localhost:5000/users/instructor/${user._id}`, {
+      method: "PATCH",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.modifiedCount) {
+          refetch();
+          Swal.fire({
+            position: "top-start",
+            icon: "success",
+            title: `${user.name} is and Instructor now`,
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        }
+      });
+  };
 
   return (
     <div className="mb-12">
@@ -76,8 +95,11 @@ const ManageUsers = () => {
                 </td>
                 <td>{user.role}</td>
                 <td>
-                  <button className="btn btn-ghost">
-                    <FaAd></FaAd>
+                  <button
+                    onClick={() => handleMakeInstructor(user)}
+                    className="btn btn-ghost"
+                  >
+                    {user.role === "instructor" ? "Instructor" : <FaAd />}
                   </button>
                 </td>
                 <td>
