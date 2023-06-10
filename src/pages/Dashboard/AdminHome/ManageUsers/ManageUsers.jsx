@@ -2,6 +2,7 @@ import React from "react";
 import { FaAd, FaUserShield } from "react-icons/fa";
 import useAxiosSecure from "../../../../hooks/useAxiosSecure";
 import { useQuery } from "@tanstack/react-query";
+import { Helmet } from "react-helmet";
 
 const ManageUsers = () => {
   // const users = useLoaderData();
@@ -15,6 +16,9 @@ const ManageUsers = () => {
 
   return (
     <div className="mb-12">
+      <Helmet>
+        <title>Manage users - SportsHub Academy</title>
+      </Helmet>
       <h2 className="text-center text-2xl font-semibold my-12">
         Manage all users
       </h2>

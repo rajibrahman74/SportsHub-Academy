@@ -1,11 +1,14 @@
 import React from "react";
 import { FaHome, FaMediumM, FaUsers } from "react-icons/fa";
+import { BiAddToQueue, BiSelectMultiple } from "react-icons/bi";
+import { BsBookmarkPlusFill } from "react-icons/bs";
+import { SiGoogleclassroom } from "react-icons/si";
 import Navbar from "../Shared/Navbar";
 import Footer from "../Shared/Footer";
 import { NavLink, Outlet } from "react-router-dom";
 
 const Dashboard = () => {
-  const role = "admin";
+  const role = "instructor";
 
   return (
     <>
@@ -47,29 +50,41 @@ const Dashboard = () => {
             ) : role === "instructor" ? (
               <>
                 <li>
-                  <NavLink to="/dashboard/addclass"> Add Class</NavLink>
+                  <NavLink to="/dashboard/addclass">
+                    <BiAddToQueue className="h-5 w-5"></BiAddToQueue>
+                    Add Class
+                  </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/dashboard/myclass"> MY Class</NavLink>
+                  <NavLink to="/dashboard/myclass">
+                    <SiGoogleclassroom className="h-5 w-5"></SiGoogleclassroom>{" "}
+                    MY Class
+                  </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/"> Home</NavLink>
+                  <NavLink to="/">
+                    <FaHome className="h-5 w-5"></FaHome> Home
+                  </NavLink>
                 </li>
               </>
             ) : (
               <>
                 <li>
                   <NavLink to="/dashboard/myselectedclass">
+                    <BiSelectMultiple className="h-5 w-5"></BiSelectMultiple>
                     My Selected Classes
                   </NavLink>
                 </li>
                 <li>
                   <NavLink to="/dashboard/myenrolledclass">
+                    <BsBookmarkPlusFill className="h-5 w-5"></BsBookmarkPlusFill>
                     My Enrolled Classes
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/"> Home</NavLink>
+                  <NavLink to="/">
+                    <FaHome className="h-5 w-5"></FaHome> Home
+                  </NavLink>
                 </li>
               </>
             )}

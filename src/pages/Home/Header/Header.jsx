@@ -27,10 +27,7 @@ const Header = () => {
       >
         <SwiperSlide>
           <div>
-            <img
-              className="w-full h-[80vh] object-cover"
-              src="https://thumbs.dreamstime.com/b/kids-soccer-sportswear-stadium-ball-kid-player-boy-forward-football-sport-concept-112596624.jpg"
-            />
+            <img className="w-full h-[80vh] object-cover" src={banner1} />
             <div className="banner-content absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
               <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-white mb-4">
                 The Beautiful Game A Journey into the World of Football

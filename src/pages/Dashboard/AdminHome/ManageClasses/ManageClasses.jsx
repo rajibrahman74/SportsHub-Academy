@@ -1,11 +1,15 @@
 import React from "react";
 import useData from "../../../../hooks/useData";
+import { Helmet } from "react-helmet";
 
 const ManageClasses = () => {
   const [data] = useData();
   console.log(data);
   return (
     <div className="mb-12">
+      <Helmet>
+        <title>Manage classes - SportsHub Academy</title>
+      </Helmet>
       <h2 className="text-center text-2xl font-semibold my-12">
         Manage all classes
       </h2>
