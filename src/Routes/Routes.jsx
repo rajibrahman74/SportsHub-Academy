@@ -8,8 +8,12 @@ import SignUp from "../pages/SignUp/SignUp";
 import Login from "../pages/Login/Login";
 import PrivateRouts from "./PrivateRouts";
 import Dashboard from "../Layout/Dashboard";
-import ManageClasses from "../pages/Dashboard/ManageClasses/ManageClasses";
-import ManageUsers from "../pages/Dashboard/ManageUsers/ManageUsers";
+import ManageUsers from "../pages/Dashboard/AdminHome/ManageUsers/ManageUsers";
+import ManageClasses from "../pages/Dashboard/AdminHome/ManageClasses/ManageClasses";
+import AddClass from "../pages/Dashboard/InstructorHome/AddClass/AddClass";
+import MyClasses from "../pages/Dashboard/InstructorHome/MyClasses/MyClasses";
+import MyEnrolledClasses from "../pages/Dashboard/UsersHome/MyEnrolledClasses/MyEnrolledClasses";
+import MySelectedClasses from "../pages/Dashboard/UsersHome/MySelectedClasses/MySelectedClasses";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -46,6 +50,7 @@ const router = createBrowserRouter([
       </PrivateRouts>
     ),
     children: [
+      // admin home routes
       {
         path: "manageclass",
         element: <ManageClasses />,
@@ -53,6 +58,24 @@ const router = createBrowserRouter([
       {
         path: "manageuser",
         element: <ManageUsers />,
+      },
+      // instructor home routes
+      {
+        path: "addclass",
+        element: <AddClass />,
+      },
+      {
+        path: "myclass",
+        element: <MyClasses />,
+      },
+      // all users or students home routes
+      {
+        path: "myselectedclass",
+        element: <MySelectedClasses />,
+      },
+      {
+        path: "myenrolledclass",
+        element: <MyEnrolledClasses />,
       },
     ],
   },

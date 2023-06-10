@@ -1,5 +1,5 @@
 import React from "react";
-import { FaHandMiddleFinger, FaHome, FaUsers } from "react-icons/fa";
+import { FaHandMiddleFinger, FaHome, FaMediumM, FaUsers } from "react-icons/fa";
 import Navbar from "../Shared/Navbar";
 import Footer from "../Shared/Footer";
 import { NavLink, Outlet } from "react-router-dom";
@@ -29,7 +29,7 @@ const Dashboard = () => {
               <>
                 <li>
                   <NavLink to="/dashboard/manageclass">
-                    <FaHandMiddleFinger className="h-5 w-5"></FaHandMiddleFinger>{" "}
+                    <FaMediumM className="h-5 w-5"></FaMediumM>
                     Manage Class
                   </NavLink>
                 </li>
@@ -47,10 +47,10 @@ const Dashboard = () => {
             ) : role === "instructor" ? (
               <>
                 <li>
-                  <NavLink to="/dashboard/"> Add Class</NavLink>
+                  <NavLink to="/dashboard/addclass"> Add Class</NavLink>
                 </li>
                 <li>
-                  <NavLink to="/dashboard/"> MY Class</NavLink>
+                  <NavLink to="/dashboard/myclass"> MY Class</NavLink>
                 </li>
                 <li>
                   <NavLink to="/"> Home</NavLink>
@@ -59,10 +59,14 @@ const Dashboard = () => {
             ) : (
               <>
                 <li>
-                  <NavLink>My Enrolled Class</NavLink>
+                  <NavLink to="/dashboard/myselectedclass">
+                    My Selected Classes
+                  </NavLink>
                 </li>
                 <li>
-                  <NavLink>My Select Class</NavLink>
+                  <NavLink to="/dashboard/myenrolledclass">
+                    My Enrolled Classes
+                  </NavLink>
                 </li>
                 <li>
                   <NavLink to="/"> Home</NavLink>
