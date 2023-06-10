@@ -19,7 +19,7 @@ const PopularInstructors = () => {
       </h2>
       <div className="grid gap-10 md:grid-cols-3">
         {data.map((instructor) => (
-          <div key={instructor.id} className="card h-90">
+          <div key={instructor._id} className="card h-90">
             <motion.img
               src={instructor.instructor_image}
               alt={instructor.instructor_name}

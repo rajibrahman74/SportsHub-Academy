@@ -1,6 +1,6 @@
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-
+import banner1 from "../../../assets/bannerimg/banner1.png";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/effect-flip";
@@ -23,12 +23,12 @@ const Header = () => {
         loop={true}
         autoplay={{ delay: 5000 }}
         modules={[EffectFlip, Pagination, Navigation]}
-        className="mySwiper xl:w-[98.7vw] xl:h-[88vh] h-[70vh]"
+        className="mySwiper xl:w-[98.7vw]  xl:h-[80vh]"
       >
         <SwiperSlide>
           <div>
             <img
-              className="w-full h-[95vh]"
+              className="w-full h-[80vh] object-cover"
               src="https://thumbs.dreamstime.com/b/kids-soccer-sportswear-stadium-ball-kid-player-boy-forward-football-sport-concept-112596624.jpg"
             />
             <div className="banner-content absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
@@ -49,7 +49,7 @@ const Header = () => {
         <SwiperSlide>
           <div>
             <img
-              className="w-full h-[95vh]"
+              className="w-full h-[80vh] object-cover"
               src="https://media.istockphoto.com/id/180868820/photo/cricket-batsman-about-to-strike-ball.jpg?s=612x612&w=0&k=20&c=xRiAIk3RA6cmm1FtI2S-YK8Pei9qSkqxhX-JUbTI2Cs="
             />
             <div className="banner-content absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
@@ -71,7 +71,7 @@ const Header = () => {
         <SwiperSlide>
           <div>
             <img
-              className="w-full h-[95vh]"
+              className="w-full h-[80vh] object-cover"
               src="https://thumbs.dreamstime.com/b/woman-action-high-jump-sports-banner-sunset-background-horizontal-copy-space-189016260.jpg"
             />
             <div className="banner-content absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
@@ -93,7 +93,7 @@ const Header = () => {
         <SwiperSlide>
           <div>
             <img
-              className="w-full h-[95vh]"
+              className="w-full h-[80vh] object-cover"
               src="https://img.freepik.com/fotos-premium/mujer-joven-uniforme-jugando-al-tenis-accion-tecnica-mixta_641298-23363.jpg"
             />
             <div className="banner-content absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">

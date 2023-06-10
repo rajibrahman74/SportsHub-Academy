@@ -4,10 +4,12 @@ import Home from "../pages/Home/Home/Home";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import Instructors from "../pages/Instructors/Instructors";
 import Classes from "../pages/Classes/Classes";
-import Dashboard from "../pages/Dashboard/Dashboard";
 import SignUp from "../pages/SignUp/SignUp";
 import Login from "../pages/Login/Login";
 import PrivateRouts from "./PrivateRouts";
+import Dashboard from "../Layout/Dashboard";
+import ManageClasses from "../pages/Dashboard/ManageClasses/ManageClasses";
+import ManageUsers from "../pages/Dashboard/ManageUsers/ManageUsers";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -17,24 +19,14 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-        // loader: () => fetch("data.json"),
       },
       {
         path: "/instructors",
         element: <Instructors />,
-        // loader: () => fetch("data.json"),
       },
       {
         path: "/classes",
         element: <Classes />,
-      },
-      {
-        path: "/dashboard",
-        element: (
-          <PrivateRouts>
-            <Dashboard />
-          </PrivateRouts>
-        ),
       },
       {
         path: "/signup",
@@ -43,6 +35,24 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login />,
+      },
+    ],
+  },
+  {
+    path: "/dashboard",
+    element: (
+      <PrivateRouts>
+        <Dashboard />
+      </PrivateRouts>
+    ),
+    children: [
+      {
+        path: "manageclass",
+        element: <ManageClasses />,
+      },
+      {
+        path: "manageuser",
+        element: <ManageUsers />,
       },
     ],
   },

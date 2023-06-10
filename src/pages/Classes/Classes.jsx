@@ -43,7 +43,7 @@ const Classes = () => {
             {/* Action base sized basic button */}
             <div className="flex justify-end p-6 pt-0">
               <button className="inline-flex h-10 w-full items-center justify-center gap-2 whitespace-nowrap rounded-none bg-warning px-5 text-sm font-medium tracking-wide text-white">
-                <span>Order now!</span>
+                <span>Select class</span>
               </button>
             </div>
           </div>

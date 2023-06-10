@@ -13,7 +13,7 @@ const PopularClasses = () => {
       </h2>
       <div className="grid gap-4 md:grid-cols-3">
         {data.map((popularClass) => (
-          <div key={popularClass.id} className="w-full md:w-auto p-4">
+          <div key={popularClass._id} className="w-full md:w-auto p-4">
             <div className="bg-white rounded-lg shadow-lg">
               <img
                 className="rounded-t-lg"
