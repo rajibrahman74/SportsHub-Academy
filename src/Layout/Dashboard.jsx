@@ -6,9 +6,13 @@ import { SiGoogleclassroom } from "react-icons/si";
 import Navbar from "../Shared/Navbar";
 import Footer from "../Shared/Footer";
 import { NavLink, Outlet } from "react-router-dom";
+import useAdmin from "../hooks/useAdmin";
+import useInstructor from "../hooks/useInstructor";
 
 const Dashboard = () => {
-  const role = "instructor";
+  // const role = "instructor";
+  const [isAdmin] = useAdmin();
+  const [isInstructor] = useInstructor();
 
   return (
     <>
@@ -28,7 +32,7 @@ const Dashboard = () => {
         <div className="drawer-side">
           <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
           <ul className="menu p-4 w-80 h-full bg-base-200 text-base-content">
-            {role === "admin" ? (
+            {isAdmin ? (
               <>
                 <li>
                   <NavLink to="/dashboard/manageclass">
@@ -47,7 +51,7 @@ const Dashboard = () => {
                   </NavLink>
                 </li>
               </>
-            ) : role === "instructor" ? (
+            ) : isInstructor ? (
               <>
                 <li>
                   <NavLink to="/dashboard/addclass">
