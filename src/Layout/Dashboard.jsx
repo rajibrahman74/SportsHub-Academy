@@ -1,5 +1,5 @@
 import React from "react";
-import { FaHandMiddleFinger, FaHome, FaMediumM, FaUsers } from "react-icons/fa";
+import { FaHome, FaMediumM, FaUsers } from "react-icons/fa";
 import Navbar from "../Shared/Navbar";
 import Footer from "../Shared/Footer";
 import { NavLink, Outlet } from "react-router-dom";
