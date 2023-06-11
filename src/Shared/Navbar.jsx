@@ -2,6 +2,8 @@ import { Link, NavLink } from "react-router-dom";
 import logo from "../../src/assets/logo.png";
 import { useContext } from "react";
 import { AuthContext } from "../providers/AuthProviders";
+import DarkModeToggle from "./darkmode";
+
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
 
@@ -14,8 +16,8 @@ const Navbar = () => {
       });
   };
   return (
-    <header className="bg-[#eeeff1] sticky top-0 z-[100]">
-      <nav className="navbar max-w-7xl mx-auto flex justify-between items-center px-4 py-5">
+    <header className="nav sticky top-0 z-50 bg-white text-[#1f2937]">
+      <nav className="navbar max-w-7xl mx-auto flex justify-between items-center  px-4 py-5">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
             <svg
@@ -37,26 +39,26 @@ const Navbar = () => {
             tabIndex={0}
             className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
           >
-            <li className="text-gray-900 font-medium">
+            <li className=" font-medium">
               <NavLink
                 exact
-                activeclassName="active text-[#757575] font-semibold hover:text-warning"
+                activeclassName="active  font-semibold hover:text-warning"
                 to="/"
               >
                 Home
               </NavLink>
             </li>
-            <li className="text-gray-900 font-medium">
+            <li className="font-medium">
               <NavLink
-                activeclassName="active text-[#757575] font-semibold hover:text-warning"
+                activeclassName="font-semibold hover:text-warning"
                 to="/instructors"
               >
                 Instructors
               </NavLink>
             </li>
-            <li className="text-gray-900 font-medium">
+            <li className=" font-medium">
               <NavLink
-                activeClassName="active text-[#757575] font-semibold hover:text-warning"
+                activeClassName="font-semibold hover:text-warning"
                 to="/classes"
               >
                 Classes
@@ -64,9 +66,9 @@ const Navbar = () => {
             </li>
 
             {user && (
-              <li className="text-gray-900 font-medium">
+              <li className=" font-medium">
                 <NavLink
-                  activeClassName="active text-[#757575] font-semibold hover:text-warning"
+                  activeClassName="active font-semibold hover:text-warning"
                   to="/dashboard"
                 >
                   Dashboard
@@ -79,28 +81,29 @@ const Navbar = () => {
           <Link to="/">
             <img className="w-36 md:w-[200px]" src={logo} alt="" />
           </Link>
+          <DarkModeToggle />
         </div>
         <div className="hidden lg:flex me-auto">
           <ul className="flex items-center justify-start gap-6 px-1">
-            <li className="text-gray-900 font-medium">
+            <li className="font-medium">
               <NavLink
-                activeClassName="active text-[#757575] font-semibold hover:text-warning"
+                activeClassName="active font-semibold hover:text-warning"
                 to="/"
               >
                 Home
               </NavLink>
             </li>
-            <li className="text-gray-900 font-medium">
+            <li className=" font-medium">
               <NavLink
-                activeClassName="active text-[#757575] font-semibold hover:text-warning"
+                activeClassName="font-semibold hover:text-warning"
                 to="/instructors"
               >
                 Instructors
               </NavLink>
             </li>
-            <li className="text-gray-900 font-medium">
+            <li className=" font-medium">
               <NavLink
-                activeClassName="active text-[#757575] font-semibold hover:text-warning"
+                activeClassName="font-semibold hover:text-warning"
                 to="/classes"
               >
                 Classes
@@ -108,9 +111,9 @@ const Navbar = () => {
             </li>
 
             {user && (
-              <li className="text-gray-900 font-medium">
+              <li className="font-medium">
                 <NavLink
-                  activeClassName="active text-[#757575] font-semibold hover:text-warning"
+                  activeClassName="active font-semibold hover:text-warning"
                   to="/dashboard"
                 >
                   Dashboard
