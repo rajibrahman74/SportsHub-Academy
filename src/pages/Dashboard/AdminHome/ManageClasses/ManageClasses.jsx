@@ -26,6 +26,25 @@ const ManageClasses = () => {
         }
       });
   };
+  const handleDeny = (classInfo) => {
+    console.log(classInfo);
+    fetch(`http://localhost:5000/deny/${classInfo}`, {
+      method: "PATCH",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.modifiedCount) {
+          refetch();
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: `Class Denied`,
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        }
+      });
+  };
   return (
     <div className="mb-12">
       <Helmet>
@@ -90,9 +109,18 @@ const ManageClasses = () => {
                       Approve
                     </button>
                   )}
-                  <button className="btn btn-ghost btn-xs bg-red-600 hover:text-black">
-                    Deny
-                  </button>
+                  {classInfo.class_status === "denied" ? (
+                    <button className=" w-full btn btn-sm btn-disabled font-bold ">
+                      Denied
+                    </button>
+                  ) : (
+                    <button
+                      onClick={() => handleDeny(classInfo.class_status)}
+                      className="btn btn-ghost btn-xs bg-red-600 hover:text-black"
+                    >
+                      Deny
+                    </button>
+                  )}
                   <button className="btn btn-ghost btn-xs bg-yellow-600 hover:text-black">
                     feedback
                   </button>
