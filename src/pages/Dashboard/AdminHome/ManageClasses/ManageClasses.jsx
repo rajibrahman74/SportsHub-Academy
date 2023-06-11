@@ -2,6 +2,7 @@ import React from "react";
 import useData from "../../../../hooks/useData";
 import { Helmet } from "react-helmet";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 const ManageClasses = () => {
   const [data, , refetch] = useData();
@@ -121,9 +122,15 @@ const ManageClasses = () => {
                       Deny
                     </button>
                   )}
-                  <button className="btn btn-ghost btn-xs bg-yellow-600 hover:text-black">
-                    feedback
-                  </button>
+                  {classInfo.class_status === "denied" && (
+                    <Link
+                      state={classInfo}
+                      to={"/dashboard/feedback"}
+                      className=" w-full btn btn-sm font-bold"
+                    >
+                      FeedBack
+                    </Link>
+                  )}
                 </td>
               </tr>
             ))}

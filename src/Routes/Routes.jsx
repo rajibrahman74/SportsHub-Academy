@@ -14,6 +14,7 @@ import AddClass from "../pages/Dashboard/InstructorHome/AddClass/AddClass";
 import MyClasses from "../pages/Dashboard/InstructorHome/MyClasses/MyClasses";
 import MyEnrolledClasses from "../pages/Dashboard/UsersHome/MyEnrolledClasses/MyEnrolledClasses";
 import MySelectedClasses from "../pages/Dashboard/UsersHome/MySelectedClasses/MySelectedClasses";
+import Feedback from "../pages/Dashboard/AdminHome/ManageClasses/Feedback";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -54,6 +55,10 @@ const router = createBrowserRouter([
       {
         path: "manageclass",
         element: <ManageClasses />,
+      },
+      {
+        path: "feedback",
+        element: <Feedback></Feedback>,
       },
       {
         path: "manageuser",
