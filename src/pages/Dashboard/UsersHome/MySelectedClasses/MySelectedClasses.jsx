@@ -1,7 +1,10 @@
 import React from "react";
 import { Helmet } from "react-helmet";
+import useSelectedClass from "../../../../hooks/useSelectedClass";
 
 const MySelectedClasses = () => {
+  const [selectedclass] = useSelectedClass()
+  console.log(selectedclass);
   return (
     <div>
       <Helmet>

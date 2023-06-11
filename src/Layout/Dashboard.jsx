@@ -5,7 +5,7 @@ import { BsBookmarkPlusFill } from "react-icons/bs";
 import { SiGoogleclassroom } from "react-icons/si";
 import Navbar from "../Shared/Navbar";
 import Footer from "../Shared/Footer";
-import { NavLink, Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet } from "react-router-dom";
 import useAdmin from "../hooks/useAdmin";
 import useInstructor from "../hooks/useInstructor";
 
@@ -35,60 +35,60 @@ const Dashboard = () => {
             {isAdmin ? (
               <>
                 <li>
-                  <NavLink to="/dashboard/manageclass">
+                  <Link to="/dashboard/manageclass">
                     <FaMediumM className="h-5 w-5"></FaMediumM>
                     Manage Class
-                  </NavLink>
+                  </Link>
                 </li>
                 <li>
-                  <NavLink to="/dashboard/manageuser">
+                  <Link to="/dashboard/manageuser">
                     <FaUsers className="h-5 w-5"></FaUsers> Manage User
-                  </NavLink>
+                  </Link>
                 </li>
                 <li>
-                  <NavLink to="/">
+                  <Link to="/">
                     <FaHome className="h-5 w-5"></FaHome> Home
-                  </NavLink>
+                  </Link>
                 </li>
               </>
             ) : isInstructor ? (
               <>
                 <li>
-                  <NavLink to="/dashboard/addclass">
+                  <Link to="/dashboard/addclass">
                     <BiAddToQueue className="h-5 w-5"></BiAddToQueue>
                     Add Class
-                  </NavLink>
+                  </Link>
                 </li>
                 <li>
-                  <NavLink to="/dashboard/myclass">
+                  <Link to="/dashboard/myclass">
                     <SiGoogleclassroom className="h-5 w-5"></SiGoogleclassroom>{" "}
                     MY Class
-                  </NavLink>
+                  </Link>
                 </li>
                 <li>
-                  <NavLink to="/">
+                  <Link to="/">
                     <FaHome className="h-5 w-5"></FaHome> Home
-                  </NavLink>
+                  </Link>
                 </li>
               </>
             ) : (
               <>
                 <li>
-                  <NavLink to="/dashboard/myselectedclass">
+                  <Link to="/dashboard/myselectedclass">
                     <BiSelectMultiple className="h-5 w-5"></BiSelectMultiple>
                     My Selected Classes
-                  </NavLink>
+                  </Link>
                 </li>
                 <li>
-                  <NavLink to="/dashboard/myenrolledclass">
+                  <Link to="/dashboard/myenrolledclass">
                     <BsBookmarkPlusFill className="h-5 w-5"></BsBookmarkPlusFill>
                     My Enrolled Classes
-                  </NavLink>
+                  </Link>
                 </li>
                 <li>
-                  <NavLink to="/">
+                  <Link to="/">
                     <FaHome className="h-5 w-5"></FaHome> Home
-                  </NavLink>
+                  </Link>
                 </li>
               </>
             )}

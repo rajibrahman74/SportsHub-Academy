@@ -1,9 +1,42 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Helmet } from "react-helmet";
 import useData from "../../hooks/useData";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
+import { AuthContext } from "../../providers/AuthProviders";
+import Swal from "sweetalert2";
 
 const Classes = () => {
   const [data] = useData();
+  const [axiosSecure] = useAxiosSecure();
+  const { user } = useContext(AuthContext);
+
+  const handleSelectClass = (cls) => {
+    const { class_name, class_image, instructor_name, price } = cls;
+    if (user?.email) {
+      const addedClass = {
+        userEmail: user?.email,
+        class_name,
+        class_image,
+        instructor_name,
+        price,
+      };
+      axiosSecure
+        .post("/selectedclass", addedClass)
+        .then((data) => {
+          console.log(data.data.insertedId);
+          if (data.data.insertedId) {
+            Swal.fire({
+              position: "center",
+              icon: "success",
+              title: "Selected successfully",
+              showConfirmButton: false,
+              timer: 1500,
+            });
+          }
+        })
+        .catch((err) => console.log(err));
+    }
+  };
 
   return (
     <div className="max-w-7xl mx-auto px-4 my-20">
@@ -31,7 +64,9 @@ const Classes = () => {
                 <h3 className="text-xl font-medium text-slate-700">
                   {item.class_name}
                 </h3>
-                <p className="font-semibold text-black text-md my-3">{item.instructor_name}</p>
+                <p className="font-semibold text-black text-md my-3">
+                  {item.instructor_name}
+                </p>
                 <div className="flex justify-between items-center">
                   <span className="text-slate-400">Price: ${item.price}</span>
                   <span className="text-slate-400">
@@ -42,7 +77,10 @@ const Classes = () => {
             </div>
             {/* Action base sized basic button */}
             <div className="flex justify-end p-6 pt-0">
-              <button className="inline-flex h-10 w-full items-center justify-center gap-2 whitespace-nowrap rounded-none bg-warning px-5 text-sm font-medium tracking-wide text-white">
+              <button
+                onClick={() => handleSelectClass(item)}
+                className="inline-flex h-10 w-full items-center justify-center gap-2 whitespace-nowrap rounded-none bg-warning px-5 text-sm font-medium tracking-wide text-white"
+              >
                 <span>Select class</span>
               </button>
             </div>
