@@ -1,6 +1,7 @@
 import { FaTrash } from "react-icons/fa";
 import Swal from "sweetalert2";
 import useSelectedClass from "../../../../hooks/useSelectedClass";
+import { Link } from "react-router-dom";
 
 const MySelectedClasses = () => {
   const [selectClass, refetch] = useSelectedClass();
@@ -48,6 +49,7 @@ const MySelectedClasses = () => {
               <th>Instructor Name</th>
               <th>Price</th>
               <th>Action</th>
+              <th>Pay</th>
             </tr>
           </thead>
           <tbody>
@@ -83,6 +85,11 @@ const MySelectedClasses = () => {
                       <FaTrash></FaTrash>
                     </button>
                   )}
+                </td>
+                <td>
+                  <Link to="/dashboard/payment" state={user}>
+                    <button className="btn btn-warning btn-sm">Pay</button>
+                  </Link>
                 </td>
               </tr>
             ))}
