@@ -1,6 +1,7 @@
 import React from "react";
 import img from "../../../assets/bannerimg/banner1.png";
 import { FaUsers, FaStar, FaRegCalendarAlt } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const SuccessStories = () => {
   return (
@@ -40,9 +41,11 @@ const SuccessStories = () => {
           </div>
         </div>
         <span>
-          <button className="bg-blue-500 text-white px-4 py-2 rounded transition duration-300 ease-in-out hover:bg-blue-700 hover:text-gray-100">
-            Enroll Now
-          </button>
+          <Link to="/classes">
+            <button className="bg-blue-500 text-white px-4 py-2 rounded transition duration-300 ease-in-out hover:bg-blue-700 hover:text-gray-100">
+              Enroll Now
+            </button>
+          </Link>
         </span>
       </div>
       <div className="w-full md:w-1/2 flex justify-center items-center">
