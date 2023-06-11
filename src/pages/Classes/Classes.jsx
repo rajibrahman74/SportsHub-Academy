@@ -4,11 +4,16 @@ import useData from "../../hooks/useData";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import { AuthContext } from "../../providers/AuthProviders";
 import Swal from "sweetalert2";
+import useAdmin from "../../hooks/useAdmin";
+import useInstructor from "../../hooks/useInstructor";
+import { Link } from "react-router-dom";
 
 const Classes = () => {
   const [data] = useData();
   const [axiosSecure] = useAxiosSecure();
   const { user } = useContext(AuthContext);
+  const [isAdmin] = useAdmin();
+  const [isInstructor] = useInstructor();
 
   const handleSelectClass = (cls) => {
     const { class_name, class_image, instructor_name, price } = cls;
@@ -38,6 +43,20 @@ const Classes = () => {
     }
   };
 
+  const handleButtonClick = (item) => {
+    if (user) {
+      handleSelectClass(item);
+    } else {
+      Swal.fire({
+        position: "top-start",
+        icon: "error",
+        title: "Please login first",
+        showConfirmButton: false,
+        timer: 3000,
+      });
+    }
+  };
+
   return (
     <div className="max-w-7xl mx-auto px-4 my-20">
       <Helmet>
@@ -48,7 +67,11 @@ const Classes = () => {
         {data.map((item) => (
           <div
             key={item._id}
-            className="overflow-hidden rounded bg-white text-slate-500 shadow-md shadow-slate-200"
+            className={`overflow-hidden rounded bg-white text-slate-500 shadow-md shadow-slate-200 ${
+              item.available_seats <= 0
+                ? "border-[3px] border-red-600"
+                : "border-0"
+            }`}
           >
             {/* Image */}
             <figure>
@@ -77,12 +100,29 @@ const Classes = () => {
             </div>
             {/* Action base sized basic button */}
             <div className="flex justify-end p-6 pt-0">
-              <button
-                onClick={() => handleSelectClass(item)}
-                className="inline-flex h-10 w-full items-center justify-center gap-2 whitespace-nowrap rounded-none bg-warning px-5 text-sm font-medium tracking-wide text-white"
-              >
-                <span>Select class</span>
-              </button>
+              {user && (isAdmin || isInstructor) ? (
+                <button
+                  onClick={() => handleButtonClick(item)}
+                  className="inline-flex h-10 w-full items-center justify-center gap-2 whitespace-nowrap rounded-none bg-warning px-5 text-sm font-medium tracking-wide text-white opacity-50 cursor-not-allowed"
+                  disabled
+                >
+                  <span>Select class</span>
+                </button>
+              ) : (
+                <Link to="/login">
+                  <button
+                    onClick={() => handleButtonClick(item)}
+                    className={`inline-flex h-10 w-full items-center justify-center gap-2 whitespace-nowrap rounded-none bg-warning px-5 text-sm font-medium tracking-wide text-white ${
+                      item.available_seats <= 0
+                        ? "opacity-50 cursor-not-allowed"
+                        : ""
+                    }`}
+                    disabled={item.available_seats <= 0}
+                  >
+                    <span>Select class</span>
+                  </button>
+                </Link>
+              )}
             </div>
           </div>
         ))}
