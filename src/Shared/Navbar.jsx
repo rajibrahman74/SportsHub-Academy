@@ -1,11 +1,12 @@
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../src/assets/logo.png";
+import DarkModeToggle from "./darkmode";
 import { useContext } from "react";
 import { AuthContext } from "../providers/AuthProviders";
-import DarkModeToggle from "./darkmode";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
+  console.log(user);
 
   // logout imnpliment here
   const handleLogOut = () => {
@@ -81,8 +82,8 @@ const Navbar = () => {
           <Link to="/">
             <img className="w-36 md:w-[200px]" src={logo} alt="" />
           </Link>
-          <DarkModeToggle />
         </div>
+        <DarkModeToggle />
         <div className="hidden lg:flex me-auto">
           <ul className="flex items-center justify-start gap-6 px-1">
             <li className="font-medium">

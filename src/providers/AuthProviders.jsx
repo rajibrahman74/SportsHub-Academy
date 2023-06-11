@@ -53,8 +53,6 @@ const AuthProviders = ({ children }) => {
     return signOut(auth);
   };
 
-  
-
   // ovserve user auth state
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -76,8 +74,6 @@ const AuthProviders = ({ children }) => {
       return unsubscribe();
     };
   }, []);
-
-
 
   const authInfo = {
     user,

@@ -7,14 +7,15 @@ const useSelectedClass = () => {
   const [axiosSecure] = useAxiosSecure();
   const { user } = useContext(AuthContext);
 
-  const { data: selectedclass = [], refetch } = useQuery({
-    queryKey: ["selectedclass", user?.email],
-    queryFn: async () => {
+  const { data: selectedClass = [], refetch } = useQuery(
+    ["selectedclass", user?.email],
+    async () => {
       const res = await axiosSecure(`/selectedclass?email=${user?.email}`);
       return res.data;
-    },
-  });
-  return [selectedclass, refetch];
+    }
+  );
+
+  return [selectedClass, refetch];
 };
 
 export default useSelectedClass;
