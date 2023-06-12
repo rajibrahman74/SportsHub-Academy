@@ -1,5 +1,5 @@
 import React from "react";
-import { FaHome, FaMediumM, FaUsers } from "react-icons/fa";
+import { FaHistory, FaHome, FaMediumM, FaUsers } from "react-icons/fa";
 import { BiAddToQueue, BiSelectMultiple } from "react-icons/bi";
 import { BsBookmarkPlusFill } from "react-icons/bs";
 import { SiGoogleclassroom } from "react-icons/si";
@@ -83,6 +83,12 @@ const Dashboard = () => {
                   <Link to="/dashboard/myenrolledclass">
                     <BsBookmarkPlusFill className="h-5 w-5"></BsBookmarkPlusFill>
                     My Enrolled Classes
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/dashboard/payment-histoty">
+                    <FaHistory className="h-5 w-5"></FaHistory>
+                    Payment History
                   </Link>
                 </li>
                 <li>

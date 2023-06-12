@@ -16,6 +16,7 @@ import MyEnrolledClasses from "../pages/Dashboard/UsersHome/MyEnrolledClasses/My
 import MySelectedClasses from "../pages/Dashboard/UsersHome/MySelectedClasses/MySelectedClasses";
 import Feedback from "../pages/Dashboard/AdminHome/ManageClasses/Feedback";
 import Payment from "../pages/Dashboard/Payment/Payment";
+import PaymentHistory from "../pages/Dashboard/PaymentHistory/PaymentHistory";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -87,6 +88,11 @@ const router = createBrowserRouter([
       {
         path: "payment",
         element: <Payment />,
+      },
+      {
+        path: "payment-histoty",
+        element: <PaymentHistory />,
+        loader: () => fetch("http://localhost:5000/enrolled-class"),
       },
     ],
   },
