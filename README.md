@@ -1,5 +1,10 @@
 # SportsHub academy
 
+## Webiste Links
+
+- [Live site]() 
+- [Server side]()
+
 ## Description
 
 This project is a React-based web application that combines various technologies and libraries to provide user authentication with Firebase Auth, responsive UI design with Tailwind CSS, data storage with MongoDB and Node.js, and interactive page transitions using the Swiper library.
@@ -50,10 +55,6 @@ Contributions are welcome! If you find any bugs, have suggestions for improvemen
 - [Swiper](https://swiperjs.com/)
 
 Special thanks to the creators and contributors of these amazing technologies and libraries that made this project possible.
-
-## Webiste Links
-
-- [Live site]() -[Servr side]()
 
 ## Contact
 
