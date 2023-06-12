@@ -66,9 +66,7 @@ const MyClasses = () => {
                     )}
                   </td>
                   <td>
-                    <Link to="/dashboard/addclass">
-                      <button className="btn btn-ghost btn-xs">Update</button>
-                    </Link>
+                    <button className="btn btn-ghost btn-xs">Update</button>
                   </td>
                 </tr>
               ))}

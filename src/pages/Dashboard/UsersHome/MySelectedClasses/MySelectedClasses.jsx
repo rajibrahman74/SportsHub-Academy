@@ -34,7 +34,7 @@ const MySelectedClasses = () => {
 
   return (
     <>
-      <div>
+      <div className="w-full">
         <Helmet>
           <title>My Selected classes - SportsHub Academy</title>
         </Helmet>

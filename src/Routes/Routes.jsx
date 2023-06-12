@@ -82,6 +82,7 @@ const router = createBrowserRouter([
       {
         path: "myenrolledclass",
         element: <MyEnrolledClasses />,
+        loader: () => fetch("http://localhost:5000/enrolled-class"),
       },
       {
         path: "payment",
