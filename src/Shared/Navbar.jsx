@@ -83,7 +83,6 @@ const Navbar = () => {
             <img className="w-36 md:w-[200px]" src={logo} alt="" />
           </Link>
         </div>
-        <DarkModeToggle />
         <div className="hidden lg:flex me-auto">
           <ul className="flex items-center justify-start gap-6 px-1">
             <li className="font-medium">
@@ -125,6 +124,7 @@ const Navbar = () => {
         </div>
         <div>
           <div className="flex items-center justify-end">
+            <DarkModeToggle />
             <div className="flex items-center justify-end md:justify-center gap-6">
               {user ? (
                 <span className="flex items-center justify-center gap-3">

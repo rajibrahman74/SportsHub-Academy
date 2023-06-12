@@ -33,7 +33,7 @@ const DarkModeToggle = () => {
 
   return (
     <button
-      className="fixed bottom-12 right-12 p-2 rounded-full bg-gray-300 dark:bg-gray-700"
+      className="fixed bottom-12 right-12 md:static md:me-3 p-2 rounded-full bg-gray-300 dark:bg-gray-700"
       onClick={toggleDarkMode}
     >
       {darkMode ? (
