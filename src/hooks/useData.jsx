@@ -8,7 +8,9 @@ const useData = () => {
   } = useQuery({
     queryKey: ["menu"],
     queryFn: async () => {
-      const res = await fetch("http://localhost:5000/alldata");
+      const res = await fetch(
+        "https://sports-hub-academy-server.vercel.app/alldata"
+      );
       return res.json();
     },
   });

@@ -60,7 +60,7 @@ const Login = () => {
           role: "student",
         };
 
-        fetch("http://localhost:5000/users", {
+        fetch("https://sports-hub-academy-server.vercel.app/users", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

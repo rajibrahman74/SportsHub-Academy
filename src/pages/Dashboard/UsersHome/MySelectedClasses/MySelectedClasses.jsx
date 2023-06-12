@@ -18,9 +18,12 @@ const MySelectedClasses = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/selectedclass/${user._id}`, {
-          method: "DELETE",
-        })
+        fetch(
+          `https://sports-hub-academy-server.vercel.app/selectedclass/${user._id}`,
+          {
+            method: "DELETE",
+          }
+        )
           .then((res) => res.json())
           .then((data) => {
             if (data.deletedCount > 0) {
@@ -34,7 +37,7 @@ const MySelectedClasses = () => {
 
   return (
     <>
-      <div className="w-full">
+      <div className="w-full mb-20">
         <Helmet>
           <title>My Selected classes - SportsHub Academy</title>
         </Helmet>

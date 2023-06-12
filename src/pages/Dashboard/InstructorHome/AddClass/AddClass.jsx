@@ -23,13 +23,16 @@ const AddClass = () => {
     };
 
     try {
-      const res = await fetch("http://localhost:5000/alldata", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(newClass),
-      });
+      const res = await fetch(
+        "https://sports-hub-academy-server.vercel.app/alldata",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(newClass),
+        }
+      );
 
       if (res.ok) {
         console.log("Class added successfully");
@@ -84,7 +87,6 @@ const AddClass = () => {
                 className="w-full px-3 py-2 border border-gray-200 rounded-none focus:outline-none focus:ring-1 focus:ring-warning"
               />
             </div>
-            
           </div>
           <div className="flex justify-between mb-2">
             <div>

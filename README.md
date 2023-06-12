@@ -3,7 +3,7 @@
 ## Webiste Links
 
 - [Live site]() 
-- [Server side]()
+- [Server side](https://vercel.com/rajibrahman74/sports-hub-academy-server)
 
 ## Description
 

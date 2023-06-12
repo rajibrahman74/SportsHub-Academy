@@ -83,7 +83,8 @@ const router = createBrowserRouter([
       {
         path: "myenrolledclass",
         element: <MyEnrolledClasses />,
-        loader: () => fetch("http://localhost:5000/enrolled-class"),
+        loader: () =>
+          fetch("https://sports-hub-academy-server.vercel.app/enrolled-class"),
       },
       {
         path: "payment",
@@ -92,7 +93,8 @@ const router = createBrowserRouter([
       {
         path: "payment-histoty",
         element: <PaymentHistory />,
-        loader: () => fetch("http://localhost:5000/enrolled-class"),
+        loader: () =>
+          fetch("https://sports-hub-academy-server.vercel.app/enrolled-class"),
       },
     ],
   },

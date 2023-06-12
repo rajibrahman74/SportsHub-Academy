@@ -10,7 +10,7 @@ const ManageClasses = () => {
 
   const handlePending = (classInfo) => {
     console.log(classInfo);
-    fetch(`http://localhost:5000/alldata/${classInfo}`, {
+    fetch(`https://sports-hub-academy-server.vercel.app/alldata/${classInfo}`, {
       method: "PATCH",
     })
       .then((res) => res.json())
@@ -29,7 +29,7 @@ const ManageClasses = () => {
   };
   const handleDeny = (classInfo) => {
     console.log(classInfo);
-    fetch(`http://localhost:5000/deny/${classInfo}`, {
+    fetch(`https://sports-hub-academy-server.vercel.app/deny/${classInfo}`, {
       method: "PATCH",
     })
       .then((res) => res.json())
