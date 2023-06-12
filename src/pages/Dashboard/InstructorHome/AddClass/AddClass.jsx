@@ -23,7 +23,7 @@ const AddClass = () => {
     };
 
     try {
-      const res = await fetch("http://localhost:5000/addclasses", {
+      const res = await fetch("http://localhost:5000/alldata", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -36,7 +36,7 @@ const AddClass = () => {
         Swal.fire({
           position: "top-end",
           icon: "success",
-          title: `New class added!!`,
+          title: `New class added`,
           showConfirmButton: false,
           timer: 1500,
         });

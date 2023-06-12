@@ -68,7 +68,7 @@ const Classes = () => {
         {data.map((item) => (
           <div
             key={item._id}
-            className={`overflow-hidden rounded bg-white text-slate-500 shadow-md shadow-slate-200 ${
+            className={`overflow-hidden rounded text-slate-500 shadow-md shadow-slate-200 ${
               item.available_seats <= 0
                 ? "border-[3.5px] border-red-600"
                 : "border-0"

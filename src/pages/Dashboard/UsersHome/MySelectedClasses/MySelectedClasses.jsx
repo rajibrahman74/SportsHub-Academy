@@ -2,6 +2,7 @@ import { FaTrash } from "react-icons/fa";
 import Swal from "sweetalert2";
 import useSelectedClass from "../../../../hooks/useSelectedClass";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const MySelectedClasses = () => {
   const [selectClass, refetch] = useSelectedClass();
@@ -34,6 +35,9 @@ const MySelectedClasses = () => {
   return (
     <>
       <div>
+        <Helmet>
+          <title>My Selected classes - SportsHub Academy</title>
+        </Helmet>
         <h2 className="text-center text-2xl font-semibold my-12">
           Select Classes
         </h2>

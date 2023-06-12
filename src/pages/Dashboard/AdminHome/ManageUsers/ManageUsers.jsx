@@ -103,9 +103,6 @@ const ManageUsers = () => {
                   </button>
                 </td>
                 <td>
-                  {/* <button className="btn text-lg btn-ghost ">
-                    <FaUserShield></FaUserShield>
-                  </button> */}
                   <button
                     onClick={() => handleMakeAdmin(user)}
                     className="btn btn-ghost btn-xl bg:hover-none bg-none border-0"

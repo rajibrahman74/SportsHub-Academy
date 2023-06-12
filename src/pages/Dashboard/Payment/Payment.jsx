@@ -12,9 +12,9 @@ const Payment = () => {
   const Cartprice = parseFloat(stateValue.price);
 
   return (
-    <div className="w-2/3">
+    <div className="w-full my-20">
       <h2 className="text-3xl font-bold text-center mb-10">
-        Make Your payment Done !
+        Pament Here
       </h2>
       <Elements stripe={stripePromise}>
         <Checkout price={Cartprice} items={stateValue}></Checkout>

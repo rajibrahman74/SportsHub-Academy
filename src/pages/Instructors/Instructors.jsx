@@ -20,7 +20,7 @@ const Instructors = () => {
         {data.map((instructor) => (
           <div
             key={instructor.id}
-            className="flex flex-col overflow-hidden bg-white rounded shadow-md text-slate-500 shadow-slate-200 sm:flex-row h-80"
+            className="flex flex-col overflow-hidden rounded shadow-md text-slate-500 shadow-slate-200 sm:flex-row h-80"
           >
             {/* Image */}
             <figure className="flex-1">
@@ -34,7 +34,7 @@ const Instructors = () => {
             <div className="flex justify-center items-center p-6 sm:mx-6 sm:px-0">
               <header className="flex gap-4 mb-4">
                 <div>
-                  <h3 className="text-xl font-medium text-slate-700">
+                  <h3 className="text-xl font-medium text-black">
                     {instructor.instructor_name}
                   </h3>
                   <p className="text-sm text-slate-400">

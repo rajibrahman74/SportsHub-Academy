@@ -17,7 +17,7 @@ const Feedback = () => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ fb }),
+      body: JSON.stringify([fb]),
     })
       .then((response) => response.json())
       .then((result) => {
@@ -53,8 +53,11 @@ const Feedback = () => {
             className="textarea w-full h-48"
             placeholder="Write Feedback"
           ></textarea>
-          <div className="text-end">
-            <button type="submit" className="btn bg-warning border-0 ">
+          <div className="text-end my-3">
+            <button
+              type="submit"
+              className="px-4 py-2 bg-warning border-0 hover:bg-none text-white font-semibold"
+            >
               Send
             </button>
           </div>
