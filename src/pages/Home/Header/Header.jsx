@@ -69,7 +69,7 @@ const Header = () => {
           <div>
             <img
               className="w-full h-[80vh] object-cover"
-              src="https://thumbs.dreamstime.com/b/woman-action-high-jump-sports-banner-sunset-background-horizontal-copy-space-189016260.jpg"
+              src="https://i.ibb.co/p1F3SjP/professional-sporty-woman-rollerblades-neon-background-251464988.png"
             />
             <div className="banner-content absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
               <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-white mb-4">
